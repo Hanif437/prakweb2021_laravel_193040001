@@ -22,7 +22,6 @@
         
                 </article>
         
-            <a href="/blog" class="d-block text-decoration-none mt-3">Back</a>
         </div>
     </div>
 </div>
