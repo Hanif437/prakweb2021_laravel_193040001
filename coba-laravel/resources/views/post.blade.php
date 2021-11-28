@@ -11,8 +11,13 @@
 
                     <p>By. <a href="/posts?author={{ $post->author->username }}" class="text-decoration-none">{{ $post->author->name }}</a> in <a href="/posts?category={{ $post->category->slug }}" class="text-decoration-none">{{ $post->category->name }}</a></p>
                     
-                    <img src="https://source.unsplash.com/800x400/?{{ $post->category->name }}" alt="{{ $post->category->name }}" class="image-fluid">
-                    <article class="my-3 fs-5">
+                    @if ($post->image)
+                    <div style="max-height: 350px; overflow: hidden">
+                        <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->category->name }}" class="image-fluid">
+                    </div>
+                    @else
+                        <img src="https://source.unsplash.com/800x400/?{{ $post->category->name }}" alt="{{ $post->category->name }}" class="image-fluid">
+                    @endif
 
                         {!! $post->body !!}
             
